@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="「現代人の語彙力の低下＝昔のLLMっぽい」という意図を表現したインタラクティブアート作品。「やばい」「エグい」などの代替トークンだけで返答するチャット風Webアプリです。">
+  <title>チャッとZPT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <main class="chat-panel">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M5 5.75A1.75 1.75 0 0 1 6.75 4h10.5A1.75 1.75 0 0 1 19 5.75v8.5A1.75 1.75 0 0 1 17.25 16H10l-4.2 3.15A.5.5 0 0 1 5 18.75v-13Z" />
+              <path d="M9 8h6l-6 5h6" class="avatar-cut" />
+            </svg>
+          </div>
+          <div>
+            <h1>チャッとZPT</h1>
+            <p>だいたい全部、マジでやばくてエグい感じに返します。</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" type="button" id="themeToggleButton" aria-label="ダークモードに切り替え">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3a1 1 0 0 1 1 1v1.2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm6.36 2.64a1 1 0 0 1 0 1.41l-.85.85a1 1 0 0 1-1.41-1.41l.85-.85a1 1 0 0 1 1.41 0ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm9 4a1 1 0 0 1-1 1h-1.2a1 1 0 1 1 0-2H20a1 1 0 0 1 1 1Zm-3.49 4.1.85.85a1 1 0 0 1-1.41 1.41l-.85-.85a1 1 0 1 1 1.41-1.41ZM12 17.8a1 1 0 0 1 1 1V20a1 1 0 1 1-2 0v-1.2a1 1 0 0 1 1-1Zm-5.51-1.7a1 1 0 0 1 1.41 1.41l-.85.85a1 1 0 0 1-1.41-1.41l.85-.85ZM6.2 12a1 1 0 0 1-1 1H4a1 1 0 1 1 0-2h1.2a1 1 0 0 1 1 1Zm1.7-5.51A1 1 0 0 1 6.49 7.9l-.85-.85a1 1 0 0 1 1.41-1.41l.85.85Z" />
+            </svg>
+          </button>
+          <button class="new-chat" type="button" id="newChatButton">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 5a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H6a1 1 0 1 1 0-2h5V6a1 1 0 0 1 1-1Z" />
+            </svg>
+            <span>新しいチャット</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="messages" id="messages" aria-live="polite" aria-label="メッセージ">
+        <article class="message assistant-message">
+          <div class="avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M5 5.75A1.75 1.75 0 0 1 6.75 4h10.5A1.75 1.75 0 0 1 19 5.75v8.5A1.75 1.75 0 0 1 17.25 16H10l-4.2 3.15A.5.5 0 0 1 5 18.75v-13Z" />
+              <path d="M9 8h6l-6 5h6" class="avatar-cut" />
+            </svg>
+          </div>
+          <div class="bubble">
+            <p>マジやばい。それエグいわ。何でも投げて。</p>
+          </div>
+        </article>
+      </section>
+
+      <form class="composer" id="composer">
+        <label class="sr-only" for="promptInput">メッセージ</label>
+        <textarea id="promptInput" name="prompt" rows="1" placeholder="メッセージを入力" autocomplete="off"></textarea>
+        <button type="submit" aria-label="送信">送信</button>
+      </form>
+
+      <footer class="legal-footer" aria-label="法務情報">
+        <a href="terms.html">利用規約</a>
+        <a href="license.html">MIT License</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
