@@ -40,5 +40,5 @@ LLMを一切使わず、「やばい」「エモい」などの限られた語�
 ## 構成
 
 - `index.html`: 画面構造
-- `styles.css`: ChatGPT風UI
+- `styles.css`: AIチャット風UI
 - `script.js`: ランダム返答とトークン風表示
